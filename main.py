@@ -11,6 +11,7 @@ def read_video_file():
 
 def display_video_result():
     capture = read_video_file()
+
     while capture.isOpened():
         ret, frame = capture.read()
 
@@ -26,7 +27,6 @@ def display_video_result():
 
         if circles is not None:
             circles = np.uint16(np.around(circles))
-            print(len(circles[0, :]))
             for i in circles[0, :]:
                 count += 1
                 center = (i[0], i[1])
@@ -48,8 +48,6 @@ def display_video_result():
     capture.release()
     cv2.destroyAllWindows()
 
-def write_frames_to_file(fileName):
-    video = cv2.VideoWriter()
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
