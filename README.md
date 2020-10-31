@@ -1,1 +1,1 @@
-Simple Olimpiad project
+Ball detection project
